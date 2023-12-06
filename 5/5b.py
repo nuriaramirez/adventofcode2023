@@ -61,7 +61,7 @@ def read_map(file):
 if __name__ == '__main__':
     start = time.time()
 
-    # main('./test.txt')
+    # main('./test2.txt')
     main('./input.txt')
 
     print("Process time:", (time.time() - start))

@@ -29,6 +29,5 @@ if __name__ == '__main__':
 
     # main('./test.txt')
     main('./input.txt')
-    # main('./test2.txt')
 
     print("Process time:", (time.time() - start))
