@@ -1,4 +1,5 @@
 import re
+import time
 
 
 def main(filename):
@@ -14,7 +15,7 @@ def main(filename):
             for color in s.split(","):
                 color_re = re.match(r'(\d+) (red|green|blue)', color.strip())
                 possible = possible and is_possible(int(color_re[1]), color_re[2])
-                print(color, possible)
+                # print(color, possible)
 
         if possible:
             solution += game_id
@@ -39,6 +40,10 @@ def is_possible(number, color):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    start = time.time()
+
     # main('./test.txt')
-    # main('./input.txt')
-    main('./test2.txt')
+    main('./input.txt')
+    # main('./test2.txt')
+
+    print("Process time:", (time.time() - start))

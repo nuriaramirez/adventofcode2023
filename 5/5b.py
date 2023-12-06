@@ -1,3 +1,6 @@
+import time
+
+
 def main(filename):
     file = open(filename, 'r')
 
@@ -56,5 +59,9 @@ def read_map(file):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    start = time.time()
+
     # main('./test.txt')
     main('./input.txt')
+
+    print("Process time:", (time.time() - start))

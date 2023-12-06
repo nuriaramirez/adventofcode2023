@@ -1,4 +1,5 @@
 import re
+import time
 from collections import defaultdict
 
 
@@ -31,6 +32,10 @@ def main(filename):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    start = time.time()
+
     # main('./test.txt')
     main('./input.txt')
     # main('./test2.txt')
+
+    print("Process time:", (time.time() - start))

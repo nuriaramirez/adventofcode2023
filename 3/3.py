@@ -1,4 +1,5 @@
 import re
+import time
 
 
 def main(filename):
@@ -18,11 +19,11 @@ def main(filename):
         line_str = line_str.join(line)
         regex = re.finditer(r'((?<=.)*(\d+)(?=.*))', line_str)
         for r in regex:
-            start = r.start() - 1
-            end = r.end() + 1
+            s = r.start() - 1
+            e = r.end() + 1
             is_part = False
             for x in range(index - 1, index + 2):
-                for y in range(start, end):
+                for y in range(s, e):
                     if 0 <= x < len(matrix) and 0 <= y < len(line):
                         if matrix[x][y] in ("#", "&", "+", "$", "*", "%", "@", "=", "-", "/"):
                             is_part = True
@@ -40,6 +41,10 @@ def main(filename):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    start = time.time()
+
     # main('./test.txt')
     main('./input.txt')
     # main('./test2.txt')
+
+    print("Process time:", (time.time() - start))
